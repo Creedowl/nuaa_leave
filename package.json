@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "core-js": "^2.6.5",
     "element-ui": "^2.4.5",
     "vue": "^2.6.6",
@@ -58,5 +59,17 @@
       "vue-cli-service lint",
       "git add"
     ]
+  },
+  "vue": {
+    "devServer": {
+      "proxy": {
+        "/api": {
+          "target": "http://httpbin.org/post"
+        },
+        "/ai": {
+          "target": "https://bing.com"
+        }
+      }
+    }
   }
 }

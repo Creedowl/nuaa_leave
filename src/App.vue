@@ -1,25 +1,22 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <div>
-      <p>
-        If Element is successfully added to this project, you'll see an
-        <code v-text="'<el-button>'"></code>
-        below
-      </p>
-      <el-button>el-button</el-button>
-    </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header></Header>
+    <el-main>
+      <router-view></router-view>
+    </el-main>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Header,
+    Footer
   }
 }
 </script>
@@ -32,5 +29,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+main {
+  margin-top: 70px;
+  margin-bottom: 60px;
+  bottom: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
 }
 </style>
